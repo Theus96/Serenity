@@ -19,6 +19,12 @@ public class ItauPage extends PageObject {
     @FindBy(className="btnSubmit")
     private WebElementFacade btnAcessar;
     
+    @FindBy(id="acessar")
+    private WebElementFacade btnAcessarSenha;
+    
+    @FindBy(id="senha")
+    private WebElementFacade tecladoSenha;
+    
 
     public void loga(String ag, String conta) {
     	this.getDriver().navigate().to("https://www.itau.com.br/");
@@ -27,7 +33,7 @@ public class ItauPage extends PageObject {
         btnAcessar.click();
     }
     
-    public void preencheSenha(String senha) {
+    public void preencheSenha(String senha) throws InterruptedException {
 		char[] letras = null;
 		letras = senha.toCharArray();
 		
@@ -36,8 +42,9 @@ public class ItauPage extends PageObject {
 		//	By botaoSenha = ByUtils.encontraByTextoContains(ByUtils.A_LINK, letras[i]);
 		//	getElemento().elementoWebClica(botaoSenha);
 			By botaoSenha = By.xpath("//div[@class='teclas clearfix']/a[contains(text(), " + letras[i] + ")]");
-			getDriver().findElement(botaoSenha).click();;
+			getDriver().findElement(botaoSenha).click();
 		}
+		btnAcessarSenha.click();
 	}
 
     

@@ -3,7 +3,7 @@ Feature: Lookup a definition
   As an English student
   I want to look up word definitions
 
-  Scenario: Fazer Login no site do 'itau'
+  Scenario: Fazer Login no site do itau
   	Given o usuario coloque login e senha
-  	When loga 
+  	When loga '102432'
   	Then faz um pagamento

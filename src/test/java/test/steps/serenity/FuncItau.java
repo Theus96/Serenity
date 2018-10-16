@@ -12,6 +12,9 @@ public class FuncItau {
         itauPage.loga(ag, conta);
     }
 
-    
+    @Step
+    public void preencherSenha(String senha) throws InterruptedException {
+    	itauPage.preencheSenha(senha);
+    }
     
 }
