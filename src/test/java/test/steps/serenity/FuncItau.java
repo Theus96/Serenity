@@ -8,7 +8,7 @@ public class FuncItau {
     ItauPage itauPage;
 
     @Step
-    public void loga_itau(String ag, String conta) {
+    public void loga_itau(String ag, String conta) throws InterruptedException {
         itauPage.loga(ag, conta);
     }
 

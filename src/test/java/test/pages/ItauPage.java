@@ -10,13 +10,13 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("https://www.itau.com.br/")
 public class ItauPage extends PageObject {
 
-    @FindBy(id="campo_agencia")
+    @FindBy(id="agencia")
     private WebElementFacade cAgencia;
 
-    @FindBy(id="campo_conta")
+    @FindBy(id="conta")
     private WebElementFacade cConta;
     
-    @FindBy(className="btnSubmit")
+    @FindBy(id="btnLoginSubmit")
     private WebElementFacade btnAcessar;
     
     @FindBy(id="acessar")
@@ -26,11 +26,13 @@ public class ItauPage extends PageObject {
     private WebElementFacade tecladoSenha;
     
 
-    public void loga(String ag, String conta) {
+    public void loga(String ag, String conta) throws InterruptedException {
     	this.getDriver().navigate().to("https://www.itau.com.br/");
         cAgencia.sendKeys(ag);
         cConta.sendKeys(conta);
         btnAcessar.click();
+        
+        Thread.sleep(10000);
     }
     
     public void preencheSenha(String senha) throws InterruptedException {
