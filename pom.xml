@@ -127,6 +127,13 @@
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-jira-requirements-provider</artifactId>
+                        <version>1.1.3-rc.5</version>
+                    </dependency>
+                </dependencies>
 			</plugin>
 		</plugins>
 	</build>
